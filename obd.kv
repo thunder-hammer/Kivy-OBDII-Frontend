@@ -1,0 +1,112 @@
+#:kivy 2.1.0
+
+<NumericGague>:
+    orientation: 'vertical'
+    Label:
+        id:Title
+        size_hint: (1, 0.5)
+        pos_hint: {'top': 1}
+        font_size: 20
+        text: root.title
+        text_size: self.size
+        valign: 'bottom'
+        halign: 'center'
+    Label:
+        id:value
+        size_hint: (1, 0.7)
+        font_size: 50
+        text: root.value
+        text_size: self.size
+        valign: 'top'
+        halign: 'center'
+
+<BarGague>:
+    orientation: 'vertical'
+    Label:
+        id:Title
+        size_hint: (1, 0.5)
+        pos_hint: {'top': 1}
+        font_size: 20
+        text: root.title
+        text_size: self.size
+        valign: 'bottom'
+        halign: 'center'
+    ProgressBar:
+        pos_hint: {'center_x': 0.5}
+        size_hint: (0.8, 0.2)
+        id: bar
+        max: root.max_value
+        value: root.value
+        top: root.top
+    BoxLayout:
+        size_hint: (1, 0.3)
+        orientation: 'horizontal'
+        Label:
+            pos_hint: {'top': 1}
+            id: label0
+            font_size: 20
+            text: root.label0
+            text_size: self.size
+            valign: 'top'
+            halign: 'center'
+        Label:
+            pos_hint: {'top': 1}
+            id: label1
+            font_size: 20
+            text: root.label1
+            text_size: self.size
+            valign: 'top'
+            halign: 'center'
+        Label:
+            pos_hint: {'top': 1}
+            id: label2
+            font_size: 20
+            text: root.label2
+            text_size: self.size
+            valign: 'top'
+            halign: 'center'
+        Label:
+            pos_hint: {'top': 1}
+            id: label3
+            font_size: 20
+            text: root.label3
+            text_size: self.size
+            valign: 'top'
+            halign: 'center'
+        Label:
+            pos_hint: {'top': 1}
+            id: label4
+            font_size: 20
+            text: root.label4
+            text_size: self.size
+            valign: 'top'
+            halign: 'center'
+    
+
+<ObdDisplay>:
+    miles_per_gallon: mpg
+    averagempg: averagempg
+    voltage: voltage
+    coolant_temp: coolant_temp
+    engine_load: engine_load
+    speed: speed
+    rpm: rpm
+    orientation: 'vertical'
+    BarGague:
+        id: mpg
+    GridLayout:
+        rows:2
+        NumericGague:
+            id: averagempg
+        NumericGague:
+            id: voltage
+        NumericGague:
+            id: coolant_temp
+        NumericGague:
+            id: engine_load
+        NumericGague:
+            id: speed
+        NumericGague:
+            id: rpm
+        
+        
